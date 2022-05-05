@@ -12,8 +12,8 @@ const Pagination = ({ onPageChange, itemsCount, pageSize, currentPage }) => {
         <Link to={`${currentPage-1}`}><div onClick={() => onPageChange(currentPage-1)}>Назад</div></Link>
         <div className="d-flex justify-content-center">
             {pages.map((page) => (
-            <Link to={`${page}`}>
-                <div className={"btn btn-link m-1"+ (page === currentPage ? "active" : "")} key={page} onClick={() => onPageChange(page)}>
+            <Link to={`${page}`} key={page}>
+                <div className={"btn btn-link m-1"+ (page === currentPage ? "active" : "")} onClick={() => onPageChange(page)}>
                   {page}
                   </div>
             </Link>
